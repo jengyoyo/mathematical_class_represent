@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mathematical_class_represent</title>
+    <style type="text/css">
+        body {
+            background-color: #AED8F9;
+        }
+
+        #title_box {
+            width: 100%;
+            background-color: #39BDAB;
+            text-align: center;
+        }
+
+        #title {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            color: #ffffff;
+            padding: 10px;
+            margin: 5px;
+
+        }
+
+        #subtitle {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: #ffffff;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        #motivation {
+            font-size: 28px;
+            text-align: center;
+            padding: 5px;
+            margin: 5px;
+            color: #0022B1
+        }
+
+        #introduction_of_teacher {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+        }
+
+        #teacher {
+            width: 30%;
+            padding: 5px;
+            margin: 10px;
+            border: 3px dashed #0022B1;
+        }
+
+        #introduction_of_teacher_title {
+            font-size: 20px;
+            text-align: center;
+            padding: 5px;
+            margin: 5px;
+            color: #0022B1
+        }
+
+        #introduction_of_teacher_photo {
+            padding: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            flex: none;
+            border-bottom: 3px dashed #0022B1;
+            text-align: center;
+        }
+
+        #teacher_photo {
+            width: 240px;
+            height: 325px;
+        }
+
+        #introduction_of_teacher_name {
+            font-size: 20px;
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+            color: black;
+        }
+
+        #introduction_of_teacher_name span {
+            font-size: 15px;
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+            color: black;
+        }
+
+        #introduction_of_teacher_group {
+            font-size: 13px;
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+            color: black;
+        }
+
+        #represent_group_box {
+            background-color: rgb(247, 197, 105)
+        }
+
+        #represent_group_title {
+            font-size: 48px;
+            text-align: center;
+            margin: 5px;
+            margin-top: 30px;
+            padding: 5px;
+            color: black;
+        }
+
+        #represent_group_subtitle {
+            font-size: 14px;
+            text-align: center;
+            margin: 5px;
+
+            margin-bottom: 30px;
+            padding: 5px;
+            padding-bottom: 20px;
+            color: black;
+        }
+
+        #group_title {
+            font-size: 28px;
+            text-align: center;
+            font-weight: bold;
+            margin: 5px;
+            padding: 5px;
+            color: #1d53c9;
+            background-color: #46ABFF;
+        }
+
+        #represent_theme {
+            font-size: 22px;
+            text-align: center;
+            text-decoration: underline;
+            margin: 5px;
+            padding: 5px;
+            color: black;
+        }
+
+        #represent_author_title {
+            font-size: 18px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 5px;
+            color: black;
+        }
+
+        #represent_author_name {
+            font-size: 18px;
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+            color: black;
+        }
+
+        #group_represent_area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+        }
+
+        #represent_photo {
+            display: flex;
+            padding: 5px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #represent_group_setting {
+            flex: none;
+            padding: 5px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #straight_photo {
+            width: 240px;
+            height: 325px;
+        }
+
+        #horizontal_photo {
+            width: 325px;
+            height: 240px;
+        }
+
+        #line {
+            width: 100%;
+            height: 10px;
+            color: #0022B1
+        }
+
+        #video_title {
+            font-size: 30px;
+            text-align: center;
+            margin-top: 50px;
+            padding: 5px;
+            color: black;
+        }
+
+        #video {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #reply {
+            padding-top: 75px;
+        }
+
+        #reply_title {
+            font-size: 28px;
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+            color: black;
+        }
+
+        #video_title span {
+            font-size: 28px;
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+            color: rgb(0, 153, 255);
+        }
+
+        #reply_subtitle {
+            font-size: 14px;
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+            color: black;
+        }
+
+        #button_box {
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #button {
+            width: auto;
+            height: auto;
+            font-size: 20px;
+        }
+
+        #button:hover {
+            background-color: red
+        }
+    </style>
+    <script type="text/javascript">
+        function getData(pageName) {
+            var req = new XMLHttpRequest();
+            req.open("get", "http://127.0.0.1:1234/" + pageName);
+            document.location = "http://127.0.0.1:1234/" + pageName;
+            req.send();
+
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="title_box">
+        <div id="title">112 線上成果發表</div>
+        <div id="subtitle">活動時間：2021/7/10日起</div>
+        <div id="subtitle">活動地點：以網路呈現</div>
+    </div>
+    </br>
+    <image src="photo.jpg" width=100%></image>
+
+    <div id="motivation">本活動旨在讓台北市陽明高中112班學生與老師聚集在一起。</div>
+    <div id="introduction_of_teacher_title"> 以下為我們各科的指導老師</div>
+    </br>
+    <div id="introduction_of_teacher">
+
+        <div id="teacher">
+            <div id="introduction_of_teacher_photo">
+                <image src="Su_image.jpg" id="teacher_photo"></image>
+            </div>
+            <div id="introduction_of_teacher_name">蘇順聖<span>老師</span></div>
+            <div id="introduction_of_teacher_group">數學組</div>
+        </div>
+
+        <div id="teacher">
+            <div id="introduction_of_teacher_photo">
+                <image src="Allen_image.jpg" id="teacher_photo"></image>
+            </div>
+            <div id="introduction_of_teacher_name">陳冠綸<span>老師</span></div>
+            <div id="introduction_of_teacher_group">數學組</div>
+        </div>
+
+
+
+        <div id="teacher">
+            <div id="introduction_of_teacher_photo">
+                <image src="Shi_image.jpg" id="teacher_photo"></image>
+            </div>
+            <div id="introduction_of_teacher_name">施芳勤<span>老師</span></div>
+            <div id="introduction_of_teacher_group">生物組</div>
+        </div>
+
+        <div id="teacher">
+            <div id="introduction_of_teacher_photo">
+                <image src="Sean_image.jpg" id="teacher_photo"></image>
+            </div>
+            <div id="introduction_of_teacher_name">吳易哲<span>老師</span></div>
+            <div id="introduction_of_teacher_group">物理組</div>
+        </div>
+
+
+
+        <div id="teacher">
+            <div id="introduction_of_teacher_photo">
+                <image src="Fatty_image.jpg" id="teacher_photo"></image>
+            </div>
+            <div id="introduction_of_teacher_name">林承恩<span>老師</span></div>
+            <div id="introduction_of_teacher_group">地科組</div>
+        </div>
+
+        <div id="teacher">
+            <div id="introduction_of_teacher_photo">
+                <image src="Xie_image.jpg" id="teacher_photo"></image>
+            </div>
+            <div id="introduction_of_teacher_name">謝東霖<span>老師</span></div>
+            <div id="introduction_of_teacher_group">化學組</div>
+        </div>
+
+    </div>
+
+    <div id="represent_group_box">
+        <div id=represent_group_title>演講組別</div>
+        <div id="represent_group_subtitle"> 詳細的報告內容，請點選該主題的圖片或文字哦~</div>
+    </div>
+    <!-- -------------------------------------------------------------- -->
+    <div id="group_represent">
+
+        <div id="group_title">數學組</div>
+
+        <div id="group_represent_area">
+
+            <div id="represent_group_setting">
+
+                <div id="represent_photo" onclick="getData('1A2B.html');">
+                    <image src="數學組1A2B.jpg" id="horizontal_photo"></image>
+                </div>
+                <div id="represent_theme" onclick="getData('1A2B.html');">電腦讀懂你的心1A2B遊戲程式設計</div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名: </div>
+                    <div id="represent_author_name">王徐晟、劉祐豪、鄭丞佑</div>
+                </div>
+
+            </div>
+
+            <div id="represent_group_setting">
+
+                <div id="represent_photo" onclick="getData('階階高升.html');">
+                    <image src="數學組階階高升.jpg" id="horizontal_photo"></image>
+                </div>
+                <div id="represent_theme" onclick="getData('階階高升.html');">階階高升挑戰階乘極限
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名: </div>
+                    <div id="represent_author_name">呂黌昇、黃彥翔、蕭策玨</div>
+                </div>
+
+            </div>
+        </div><!-- math_represent -->
+
+        <!-- -------------------------------------------------------------- -->
+
+        <div id="group_title">生物組</div>
+
+
+        <div id="group_represent_area">
+
+            <div id="represent_group_setting">
+
+                <div id="represent_photo" onclick="getData('蛤塑膠.html');">
+                    <image src="生物組蛤塑膠.jpg" id="straight_photo"></image>
+                </div>
+                <div id="represent_theme" onclick="getData('蛤塑膠.html');">蛤塑膠</br>北台灣海域受塑膠浸染程度</br>之研究
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名: </div>
+                    <div id="represent_author_name">游筠軒、李政東、陳孟濬</div>
+                </div>
+
+            </div>
+
+            <div id="represent_group_setting">
+
+                <div id="represent_photo" onclick="getData('蟑嘴咬一口.html');">
+                    <image src="生物組蟑嘴咬一口.jpg" id="horizontal_photo"></image>
+                </div>
+                <div id="represent_theme" onclick="getData('蟑嘴咬一口.html');">蟑嘴咬一口
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名: </div>
+                    <div id="represent_author_name">翁書堉、李宗翰、蔣智斌</div>
+                </div>
+
+            </div>
+
+            <div id="represent_group_setting">
+
+                <div id="represent_photo" onclick="getData('清除者.html');">
+                    <image src="生物組清除者.jpg" id="straight_photo"></image>
+                </div>
+                <div id="represent_theme" - onclick="getData('清除者.html');">清除者清除農藥殘留
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名:</div>
+                    <div id="represent_author_name">歐亭瑄、蔡昕諾、盧妮彤</div>
+                </div>
+
+            </div>
+
+        </div><!-- biology_represent -->
+
+        <!-- -------------------------------------------------------------- -->
+        <div id="group_title">化學組</div>
+
+        <div id="group_represent_area">
+
+            <div id="represent_group_setting">
+
+                <div id="represent_photo" onclick="getData('鹼性燃料電池.html');">
+                    <image src="化學組自製鹼性燃料電池.jpg" id="horizontal_photo"></image>
+                </div>
+                <div id="represent_theme" onclick="getData('鹼性燃料電池.html');">自製鹼性燃料電池</br>並探討電極與電解液對電池的電壓</br>之影響
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名:</div>
+                    <div id="represent_author_name">黃敏睿、林柏緯</div>
+                </div>
+
+            </div>
+
+            <div id="represent_group_setting">
+
+                <div id="represent_photo" onclick="getData('氯化鉛.html');">
+                    <image src="化學組氯化鉛沉澱.jpg" id="horizontal_photo"></image>
+                </div>
+                <div id="represent_theme" onclick="getData('氯化鉛.html');">探討氯化鉛沉澱
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名:</div>
+                    <div id="represent_author_name">邱詩涵、陳伃璿</div>
+                </div>
+
+            </div>
+
+            <div id="represent_group_setting">
+
+                <div id="represent_photo" onclick="getData('千膠百態.html');">
+                    <image src="千膠百態.jpg" id="horizontal_photo"></image>
+                </div>
+                <div id="represent_theme" onclick="getData('千膠百態.html');">千膠百態</br>探討不同天然高分子多醣體</br>黏膠進行微膠囊製作
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名:</div>
+                    <div id="represent_author_name">林妤軒、洪羽彤、曾郁容</div>
+                </div>
+
+            </div>
+
+        </div><!-- chemical_represent -->
+
+
+        <!-- -------------------------------------------------------------- -->
+        <div id="group_title">物理組</div>
+
+        <div id="group_represent_area">
+
+            <div id="represent_group_setting" onclick="getData('麗麗你在響什麼.html');">
+
+                <div id="represent_photo">
+                    <image src="麗麗.jpg" id="straight_photo"></image>
+                    </a>
+                </div>
+                <div id="represent_theme" onclick="getData('麗麗你在響什麼.html');">麗麗你在響什麼</br>樂器音箱共鳴探討
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名:</div>
+                    <div id="represent_author_name">張家毓、廖子妤、徐寬</div>
+                </div>
+
+            </div>
+
+            <div id="represent_group_setting" onclick="getData('還能再快一點嗎.html');">
+
+                <div id="represent_photo">
+                    <image src="再快一點.jpg" id="horizontal_photo"></image>
+                </div>
+                <div id="represent_theme" onclick="getData('還能再快一點嗎.html');">還能再快一點嗎</br>風扇外圍遮罩之探討
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名:</div>
+                    <div id="represent_author_name">賴俞均、李修賢、蒲彥全</div>
+                </div>
+
+            </div>
+
+            <div id="represent_group_setting">
+
+                <div id="represent_photo" onclick="getData('特斯拉閥.html');">
+                    <image src="離子推進器.jpg" id="horizontal_photo"></image>
+                </div>
+                <div id="represent_theme" onclick="getData('特斯拉閥.html');">離子推進器結合特斯拉閥
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名:</div>
+                    <div id="represent_author_name">李項軒、周昱廷、翁梓翔</div>
+                </div>
+
+            </div>
+
+        </div><!-- physical_represent -->
+
+        <!-- -------------------------------------------------------------- -->
+
+        <div id="group_title">地科組</div>
+
+        <div id="group_represent_area">
+
+            <div id="represent_group_setting">
+
+                <div id="represent_photo" onclick="getData('晶體形狀.html');">
+
+                    <image src="晶體形狀.jpg" id="horizontal_photo"></image>
+                </div>
+                <div id="represent_theme" onclick="getData('晶體形狀.html');">不同溫壓條件晶體形狀之探討
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名:</div>
+                    <div id="represent_author_name">曾頌哲</div>
+                </div>
+
+            </div>
+
+            <div id="represent_group_setting">
+
+                <div id="represent_photo" onclick="getData('火山灰.html');">
+                    <image src="火山灰.jpg" id="horizontal_photo"></image>
+                </div>
+                <div id="represent_theme" onclick="getData('火山灰.html');">火山灰對近地表氣溫的影響</br>之模擬探討
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名:</div>
+                    <div id="represent_author_name">邱宏智、郭明軒、黃士瑋</div>
+                </div>
+
+            </div>
+
+            <div id="represent_group_setting">
+
+                <div id="represent_photo" onclick="getData('聖嬰現象.html');">
+                    <image src="聖嬰現象.jpg" id="horizontal_photo"></image>
+                </div>
+                <div id="represent_theme" onclick="getData('聖嬰現象.html');">探討聖嬰現象對</br>黑潮海水性質之影響
+                </div>
+
+                <div id="represent_author">
+                    <div id="represent_author_title">演講者姓名:</div>
+                    <div id="represent_author_name">彭鈺萱</div>
+                </div>
+
+            </div>
+
+        </div><!-- earth_science_represent -->
+
+    </div><!-- group_represent -->
+
+
+    <hr aling="right" size="5" width="100%" color="#0022B1">
+
+
+    <div id="video_title">班導致詞 <span>AND</span> 高一回憶</div>
+
+    <div id="video">
+        <video width="700" height="500" controls>
+            <source src="高一回憶.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="reply">
+        <div id="reply_title">112成果發展網站回饋！</div>
+        <div id="reply_subtitle">請點"回覆"填寫表單，謝謝</div>
+
+        <div id="button_box">
+            <a href="https://forms.gle/ZuhEAKsJWG1aJQ596"><button type="button" id="button">回覆</button></a>
+        </div>
+    </div>
+</body>
+
+</html>
